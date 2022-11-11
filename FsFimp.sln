@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{71FBA683-0969-4753-9150-900437415BB0}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsFimp.Console", "src\FsFimp.Console\FsFimp.Console.fsproj", "{B20E3868-56EB-427C-A620-F4FC886A375C}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsFimp", "src\FsFimp\FsFimp.fsproj", "{DBF863D0-8FC4-40B0-A2C3-F056378DADD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B20E3868-56EB-427C-A620-F4FC886A375C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B20E3868-56EB-427C-A620-F4FC886A375C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B20E3868-56EB-427C-A620-F4FC886A375C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B20E3868-56EB-427C-A620-F4FC886A375C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBF863D0-8FC4-40B0-A2C3-F056378DADD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBF863D0-8FC4-40B0-A2C3-F056378DADD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBF863D0-8FC4-40B0-A2C3-F056378DADD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBF863D0-8FC4-40B0-A2C3-F056378DADD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B20E3868-56EB-427C-A620-F4FC886A375C} = {71FBA683-0969-4753-9150-900437415BB0}
+		{DBF863D0-8FC4-40B0-A2C3-F056378DADD4} = {71FBA683-0969-4753-9150-900437415BB0}
+	EndGlobalSection
+EndGlobal
