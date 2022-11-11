@@ -9,6 +9,12 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsFimp.Console", "src\FsFim
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsFimp", "src\FsFimp\FsFimp.fsproj", "{DBF863D0-8FC4-40B0-A2C3-F056378DADD4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Paket", "Paket", "{5C37D0F7-6ADC-4272-B165-1CA4D0B3E25C}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+		paket.lock = paket.lock
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
