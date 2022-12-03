@@ -3,6 +3,9 @@ RESTRICTION: == net6.0
 NUGET
   remote: https://api.nuget.org/v3/index.json
     Fable.Core (3.7.1)
+    FSharp.Control.Reactive (5.0.5)
+      FSharp.Core (>= 4.7.2)
+      System.Reactive (>= 5.0 < 6.0)
     FSharp.Core (7.0)
     MQTTnet (4.1.2.350)
     MQTTnet.Extensions.External.RxMQTT.Client (4.0.33)
