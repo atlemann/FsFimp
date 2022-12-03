@@ -9,6 +9,7 @@
     <Compile Include="Fimp.fs" />
     <Compile Include="Queries.fs" />
     <Compile Include="Commands.fs" />
+    <Compile Include="MqttClient.fs" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
