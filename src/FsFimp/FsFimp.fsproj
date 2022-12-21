@@ -7,6 +7,7 @@
   <ItemGroup>
     <Content Include="paket.references" />
     <Compile Include="Fimp.fs" />
+    <Compile Include="Devices.fs" />
     <Compile Include="Queries.fs" />
     <Compile Include="Commands.fs" />
     <Compile Include="MqttClient.fs" />
