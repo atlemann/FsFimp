@@ -23,7 +23,7 @@ let create (ClientId clientId) (server: TcpServer) (credentials: Credentials) = 
     // Setup and start a rx MQTT client.
     let options =
         ManagedMqttClientOptionsBuilder()
-            .WithAutoReconnectDelay(TimeSpan.FromSeconds(5))
+            .WithAutoReconnectDelay(TimeSpan.FromSeconds(5.0))
             .WithClientOptions(MqttClientOptionsBuilder()
                 .WithProtocolVersion(MqttProtocolVersion.V311)
                 .WithClientId(clientId)
