@@ -1,23 +1,14 @@
 module FsFimp.Commands
 
 open FsFimp.Fimp
-
-module Units =
-    type [<Measure>] Red
-    type [<Measure>] Green
-    type [<Measure>] Blue
-
-    let int =
-        LanguagePrimitives.Int32WithMeasure
-
-    let single =
-        LanguagePrimitives.Float32WithMeasure
+open FsFimp.Units
+open FsFimp.Devices
 
 type LevelSwitch = On | Off
 
 module LevelSwitch =
     let interfaceType = Type.create "cmd.binary.set"
-    let service = Serv.OutLevelSwitch
+    let service = Serv.OutBinSwitch
 
     let createMessage (toggle: LevelSwitch) =
         match toggle with
@@ -30,19 +21,20 @@ module LevelSwitch =
             src
             interfaceType
 
-type Red = int<Units.Red>
-type Green = int<Units.Green>
-type Blue = int<Units.Blue>
+type Color =
+    { Red: int<Red>
+      Green: int<Green>
+      Blue: int<Blue> }
 
 module Color =
-    let interfaceType = Type.create "cmd.color.set"
+    let interfaceType = Interface.CmdColorSet
     let service = Serv.ColorControl
 
-    let createMessage (red: Red) (green: Green) (blue: Blue) =
+    let createMessage (color: Color) =
         seq {
-            "red", int red
-            "green", int green
-            "blue", int blue
+            "red", int color.Red
+            "green", int color.Green
+            "blue", int color.Blue
         }
         |> Map.ofSeq
         |> Val.Int_map
@@ -50,4 +42,46 @@ module Color =
             Props.empty
             service
             src
-            interfaceType
+            (interfaceType |> Interface.toString |> Type.create)
+
+type Thermostat =
+    { Temperature: float<Temperature> }
+
+module Thermostat =
+    let interfaceType = Interface.CmdSetpointSet
+    let service = Serv.Thermostat
+
+    let createMessage (thermostat: Thermostat) =
+        Val.Float (float thermostat.Temperature)
+        |> Message.createTimeStamped
+            Props.empty
+            service
+            src
+            (interfaceType |> Interface.toString |> Type.create)
+
+type Dimmer =
+    { Level: float<Percentage> }
+
+module Dimmer =
+    let interfaceType = Interface.CmdLevelSet
+    let service = Serv.OutLevelSwitch
+
+    let createMessage (dimmer: Dimmer) =
+        Val.Float (float dimmer.Level)
+        |> Message.createTimeStamped
+            Props.empty
+            service
+            src
+            (interfaceType |> Interface.toString |> Type.create)
+
+module PowerMeter =
+    let interfaceType = Interface.CmdMeterGetReport
+    let service = Serv.PowerMeter
+
+    let createMessage () =
+        Val.Null
+        |> Message.createTimeStamped
+            Props.empty
+            service
+            src
+            (interfaceType |> Interface.toString |> Type.create)
