@@ -2,17 +2,17 @@ STORAGE: NONE
 RESTRICTION: == net9.0
 NUGET
   remote: https://api.nuget.org/v3/index.json
-    Fable.Core (3.7.1)
+    Fable.Core (4.5)
     FSharp.Control.Reactive (6.1.2)
       FSharp.Core (>= 6.0.7)
       System.Reactive (>= 6.0.1)
-    FSharp.Core (7.0)
-    MQTTnet (4.3.7.1207)
+    FSharp.Core (9.0.202)
+    MQTTnet (4.3.5.1141)
     MQTTnet.Extensions.External.RxMQTT.Client (4.3.56)
       MQTTnet.Extensions.ManagedClient (>= 4.3.5.1141)
       System.Reactive (>= 6.0.1)
-    MQTTnet.Extensions.ManagedClient (4.3.7.1207)
-      MQTTnet (>= 4.3.7.1207)
+    MQTTnet.Extensions.ManagedClient (4.3.5.1141)
+      MQTTnet (>= 4.3.5.1141)
     Newtonsoft.Json (13.0.1)
     System.Reactive (6.0.1)
     Thoth.Json.Net (12.0)

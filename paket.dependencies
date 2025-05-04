@@ -3,7 +3,10 @@ source https://api.nuget.org/v3/index.json
 storage: none
 framework: net9.0
 
+nuget FSharp.Core
 nuget FSharp.Control.Reactive
-nuget MQTTnet ~> 4
-nuget MQTTnet.Extensions.External.RxMQTT.Client
+nuget MQTTnet 4.3.5.1141
+nuget MQTTnet.Extensions.ManagedClient 4.3.5.1141
+nuget MQTTnet.Extensions.External.RxMQTT.Client 4.3.56
 nuget Thoth.Json.Net
+nuget System.Reactive

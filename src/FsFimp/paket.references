@@ -1,3 +1,6 @@
+FSharp.Core
 MQTTnet
 MQTTnet.Extensions.External.RxMQTT.Client
 Thoth.Json.Net
+System.Reactive
+FSharp.Control.Reactive
