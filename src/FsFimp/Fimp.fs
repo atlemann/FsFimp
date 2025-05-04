@@ -15,9 +15,6 @@ module ResponseTopic =
     let create topic =
         ResponseTopic topic
 
-    let createFromResourceType topic =
-        create $"pt:j1/mt:evt{topic}"
-
     let value (ResponseTopic topic) = topic
 
 [<RequireQualifiedAccess>]
@@ -203,21 +200,31 @@ module RespTo =
 
 [<RequireQualifiedAccess>]
 type Serv =
+    | Basic
     | Vinculum
     | System
     | Gateway
     | OutBinSwitch
     | OutLevelSwitch
     | ColorControl
+    | Thermostat
+    | PowerMeter
+    | SensorHumid
+    | SensorTemp
 module Serv =
     let encode (src: Serv) =
         match src with
+        | Serv.Basic -> Encode.string "basic"
         | Serv.Vinculum -> Encode.string "vinculum"
         | Serv.System -> Encode.string "system"
         | Serv.Gateway -> Encode.string "gateway"
         | Serv.OutBinSwitch -> Encode.string "out_bin_switch"
         | Serv.OutLevelSwitch -> Encode.string "out_lvl_switch"
         | Serv.ColorControl -> Encode.string "color_ctrl"
+        | Serv.Thermostat -> Encode.string "thermostat"
+        | Serv.PowerMeter -> Encode.string "meter_elec"
+        | Serv.SensorHumid -> Encode.string "sensor_humid"
+        | Serv.SensorTemp -> Encode.string "sensor_temp"
 
 type Src = private Src of Source: string
 module Src =
