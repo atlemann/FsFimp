@@ -6,7 +6,7 @@ NUGET
     FSharp.Control.Reactive (6.1.2)
       FSharp.Core (>= 6.0.7)
       System.Reactive (>= 6.0.1)
-    FSharp.Core (9.0.202)
+    FSharp.Core (8.0.403)
     MQTTnet (4.3.5.1141)
     MQTTnet.Extensions.External.RxMQTT.Client (4.3.56)
       MQTTnet.Extensions.ManagedClient (>= 4.3.5.1141)
