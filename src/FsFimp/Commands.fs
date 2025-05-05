@@ -7,8 +7,8 @@ open FsFimp.Devices
 type LevelSwitch = On | Off
 
 module LevelSwitch =
-    let interfaceType = Type.create "cmd.binary.set"
-    let service = Serv.OutBinSwitch
+    let service = Serv.OutLevelSwitch
+    let interfaceType = CmdBinarySet
 
     let createMessage (toggle: LevelSwitch) =
         match toggle with
@@ -19,7 +19,7 @@ module LevelSwitch =
             Props.empty
             service
             src
-            interfaceType
+            (interfaceType |> Interface.toString |> Type.create)
 
 type Color =
     { Red: int<Red>
@@ -60,14 +60,14 @@ module Thermostat =
             (interfaceType |> Interface.toString |> Type.create)
 
 type Dimmer =
-    { Level: float<Percentage> }
+    { Level: int<Percentage> }
 
 module Dimmer =
-    let interfaceType = Interface.CmdLevelSet
     let service = Serv.OutLevelSwitch
+    let interfaceType = Interface.CmdLevelSet
 
     let createMessage (dimmer: Dimmer) =
-        Val.Float (float dimmer.Level)
+        Val.Int (int dimmer.Level)
         |> Message.createTimeStamped
             Props.empty
             service
