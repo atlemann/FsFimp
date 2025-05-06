@@ -170,7 +170,8 @@ module DeviceKind =
 
             match deviceType with
             | None ->
-                if supported.ContainsKey "thermostat" then Thermostat
+                if supported.ContainsKey "appliance" then Appliance
+                elif supported.ContainsKey "thermostat" then Thermostat
                 elif supported.ContainsKey "sensor" then Sensor
                 elif supported.ContainsKey "light" then Light
                 elif supported.ContainsKey "battery" then Battery
@@ -178,6 +179,7 @@ module DeviceKind =
                 elif supported.ContainsKey "leak_detector" then LeakDetector
                 elif supported.ContainsKey "meter" then Meter
                 else Unknown "Unknown"
+            | Some "appliance" -> Appliance
             | Some "thermostat" -> Thermostat
             | Some "light" -> Light
             | Some "battery" -> Battery
