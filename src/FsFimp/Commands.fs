@@ -7,10 +7,9 @@ open FsFimp.Devices
 type LevelSwitch = On | Off
 
 module LevelSwitch =
-    let service = Serv.OutLevelSwitch
     let interfaceType = CmdBinarySet
 
-    let createMessage (toggle: LevelSwitch) =
+    let createMessage service (toggle: LevelSwitch) =
         match toggle with
         | On -> true
         | Off -> false
