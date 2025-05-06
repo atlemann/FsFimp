@@ -51,7 +51,11 @@ module Thermostat =
     let service = Serv.Thermostat
 
     let createMessage (thermostat: Thermostat) =
-        Val.Float (float thermostat.Temperature)
+        Map.empty
+        |> Map.add "type" "heat"
+        |> Map.add "temp" (string thermostat.Temperature)
+        |> Map.add "unit" "C"
+        |> Val.Str_map
         |> Message.createTimeStamped
             Props.empty
             service
